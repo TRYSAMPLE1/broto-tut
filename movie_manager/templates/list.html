@@ -1,1 +1,17 @@
+{% extends "blank_layout.html" %}
+{% load static %}
+
+{%include 'menu.html' %}
+
+{% block content %}
+
+{% for movie_obj in movies %}
+
+<h1>Title: {{movie_obj.title | lower}}</h1>
+{% comment %} <img src="{% static "images/" %}{{movie_obj.img}}"> {% endcomment %}
+<h2>Year: {{movie_obj.year| default:'year not found!!!'}}</h2>
+<h3>Summary:{{movie_obj.description}}</h3>
+{% endfor %}
+{% endblock content %}
+
 <h1>List</h1>
